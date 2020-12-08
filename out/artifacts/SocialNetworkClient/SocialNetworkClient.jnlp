@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="SocialNetworkClient.jnlp">
+  <information>
+    <title>SocialNetworkClient</title>
+    <vendor>Unknown</vendor>
+    <description>SocialNetworkClient</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="SocialNetworkClient.jar" size="584470" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="600" height="400" main-class="client.ClientMain"  name="SocialNetworkClient" />
+  <update check="background"/>
+</jnlp>

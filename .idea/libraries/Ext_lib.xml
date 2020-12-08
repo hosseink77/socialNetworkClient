@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="Ext_lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libProject/jackson-annotations-2.11.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libProject/jackson-core-2.11.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libProject/jackson-databind-2.11.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libProject/lombok-1.18.11.97.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libProject/prelombok-1.18.11.96.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libProject/spring-beans-5.2.8.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libProject/spring-core-5.2.8.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libProject/spring-jcl-5.2.8.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libProject/spring-web-5.2.8.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libProject/jfoenix-8.0.7.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
