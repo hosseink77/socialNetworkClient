@@ -126,7 +126,16 @@ public class HomeScreenController implements Initializable {
         }
         if (actionEvent.getSource() == homeButton) {
 
-            System.out.println("Home button pressed!!!");
+            if (CreateRestTemplate.isConnected()){
+                postListPane.getChildren().clear();
+                loadPostsinHome();
+            }else{
+                errorText.setTextFill(Paint.valueOf(new Color(1, 0.2, 0.2, 1).toString()));
+                errorText.setText("Connection failed to load posts!!! Please try again later.");
+                errorText.setVisible(true);
+            }
+
+//            System.out.println("Home button pressed!!!");
         }
         if (actionEvent.getSource() == friendsButton) {
             System.out.println("Friends button pressed!!!");
@@ -153,7 +162,7 @@ public class HomeScreenController implements Initializable {
             postsPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
             Node[] nodes = new Node[postDataObjects.size()];
 
-            for (int i = postDataObjects.size()-1; i >= 0; i--) {
+            for (int i = 0; i < postDataObjects.size(); i++) {
                 try {
 
                     final int j = i;
