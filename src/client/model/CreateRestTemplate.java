@@ -1,6 +1,8 @@
 package client.model;
 
+import client.model.entity.FriendEntity;
 import client.model.entity.PostEntity;
+import client.model.entity.UserEntity;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -193,6 +195,29 @@ public class CreateRestTemplate {
         }
 
     }
+
+    public static List<UserEntity> buildGetListFriend(String url) throws RestClientException {
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            ResponseEntity<JsonNode> response = buildObject().getForEntity(baseUrl + url , JsonNode.class);
+            JsonNode body =  response.getBody();
+
+            List<UserEntity> list = mapper.convertValue(
+                    body,
+                    new TypeReference<List<UserEntity>>(){}
+            );
+
+            return list;
+        } catch (HttpClientErrorException.NotFound ex) {
+            System.out.println("404 not found");
+            return null;
+        } catch (ResourceAccessException ex) {
+            System.out.println("ResourceAccessException : No Connection");
+            return null;
+        }
+
+    }
+
     public static <T> boolean buildDeleteByPath(String url) throws RestClientException {
         boolean result;
         try {

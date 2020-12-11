@@ -139,6 +139,8 @@ public class HomeScreenController implements Initializable {
         }
         if (actionEvent.getSource() == friendsButton) {
             System.out.println("Friends button pressed!!!");
+            ClientMain.loadUiToSceneResize("FriendScreen",735,668);
+
         }
         if (actionEvent.getSource() == settingsButton) {
             System.out.println("Settings button pressed!!!");

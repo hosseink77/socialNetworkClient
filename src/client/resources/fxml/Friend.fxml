@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox fx:id="friend" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onFriendClicked" prefHeight="90.0" prefWidth="567.0" spacing="30.0" style="-fx-background-color: #02030A; -fx-background-radius: 5; -fx-background-insets: 0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<HBox fx:id="friend" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onFriendClicked" prefHeight="90.0" prefWidth="567.0" spacing="30.0" style="-fx-background-color: #02030A; -fx-background-radius: 5; -fx-background-insets: 0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controllers.FriendController">
    <effect>
       <DropShadow blurType="GAUSSIAN" height="5.0" radius="2.0" width="5.0" />
    </effect>
@@ -31,12 +31,12 @@
             </Label>
             <HBox alignment="CENTER" prefHeight="29.0" prefWidth="226.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="35.0" prefWidth="109.0" text="Number of posts: " textFill="WHITE">
+                  <Label alignment="CENTER" prefHeight="35.0" prefWidth="109.0" text="registery date :" textFill="WHITE">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <Label fx:id="postNumber_text" prefHeight="29.0" prefWidth="54.0" text="20" textFill="WHITE">
+                  <Label fx:id="postNumber_text" prefHeight="29.0" prefWidth="97.0" text="2020.7.21" textFill="WHITE">
                      <font>
                         <Font size="13.0" />
                      </font>

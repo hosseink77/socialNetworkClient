@@ -254,24 +254,6 @@ public class SignUpController implements Initializable {
         }
 
     }
-
-
-
-
-//    private void loadUI(String ui) {
-//        Parent root = null;
-//
-//        try {
-//            root = FXMLLoader.load(getClass().getResource(ui));
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        try {
-//            anchorPane.getChildren().setAll(root);
-//        } catch (NullPointerException ex) {
-//            ex.printStackTrace();
-//        }
-//    }
 }
 
 	

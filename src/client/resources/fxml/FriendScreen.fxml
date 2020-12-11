@@ -14,12 +14,12 @@
 
 <AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="735.0" style="-fx-background-color: #2D3447;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controllers.FriendScreenController">
    <children>
-      <Label layoutX="293.0" layoutY="14.0" text="HK" textFill="#2196f3">
+      <Label layoutX="287.0" layoutY="14.0" text="HK" textFill="#2196f3">
          <font>
             <Font size="35.0" />
          </font>
       </Label>
-      <Label layoutX="362.0" layoutY="14.0" text=" Studios" textFill="#a0a2ab">
+      <Label layoutX="333.0" layoutY="14.0" text=" Studios" textFill="#a0a2ab">
          <font>
             <Font size="35.0" />
          </font>
@@ -40,21 +40,26 @@
                   </JFXTextField>
                </children>
             </HBox>
-            <JFXButton fx:id="addEditButton" onAction="#handleAddEditAction" prefHeight="36.0" prefWidth="106.0" style="-fx-background-color: #3C58FA;" text="Add Friend" textFill="#a0a2ab">
+            <JFXButton fx:id="addFriendButton" onAction="#handleAddFriendAction" prefHeight="36.0" prefWidth="106.0" style="-fx-background-color: #3C58FA;" text="Add Friend" textFill="#a0a2ab">
                <font>
                   <Font size="15.0" />
                </font>
             </JFXButton>
-            <Label fx:id="noUserFound" alignment="CENTER" prefHeight="36.0" prefWidth="225.0" text="User not found!" textAlignment="CENTER" textFill="#e41414" visible="false">
+            <Label fx:id="errorNotFound" alignment="CENTER" prefHeight="36.0" prefWidth="225.0" text="User not found!" textAlignment="CENTER" textFill="#e41414" visible="false">
                <font>
-                  <Font size="22.0" />
+                  <Font size="19.0" />
                </font>
             </Label>
          </children>
       </HBox>
-      <ScrollPane fx:id="postsPane" fitToWidth="true" hbarPolicy="NEVER" layoutX="33.0" layoutY="162.0" prefHeight="485.0" prefWidth="657.0" style="-fx-background-color: #2D3447;" stylesheets="@../css/HomeScreenStyle.css">
+      <Label fx:id="errorConnection" alignment="CENTER" layoutX="68.0" layoutY="168.0" prefHeight="36.0" prefWidth="587.0" text="Connection failed to load friends!!! Please try again later." textAlignment="CENTER" textFill="#e41414" visible="false">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <ScrollPane fx:id="friendsPane" fitToWidth="true" hbarPolicy="NEVER" layoutX="33.0" layoutY="212.0" prefHeight="435.0" prefWidth="657.0" style="-fx-background-color: #2D3447;" stylesheets="@../css/HomeScreenStyle.css">
          <content>
-            <VBox fx:id="postListPane" alignment="TOP_CENTER" prefHeight="484.0" prefWidth="567.0" style="-fx-background-color: #2D3447;">
+            <VBox fx:id="friendListPane" alignment="TOP_CENTER" prefHeight="433.0" prefWidth="655.0" style="-fx-background-color: #2D3447;">
                <padding>
                   <Insets bottom="8.0" left="20.0" right="20.0" top="6.0" />
                </padding>

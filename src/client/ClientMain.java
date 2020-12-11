@@ -5,10 +5,12 @@ import client.controllers.LoginController;
 import client.model.ConvertImage;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import javax.xml.crypto.Data;
@@ -23,6 +25,8 @@ public class ClientMain extends Application {
     public static Stage parentWindow;
 
     public static Scene scene;
+
+    public static Stage stage;
 
     public static final String ICON_IMAGE_LOC = "client/resources/icon.png";
 
@@ -54,7 +58,7 @@ public class ClientMain extends Application {
 //            Parent root = FXMLLoader.load(getClass().getResource("view/sample.fxml"));
 
             scene = new Scene(root, 1187, 664);
-
+            stage =primaryStage;
             primaryStage.setScene(scene);
             primaryStage.show();
             primaryStage.setTitle("HK Studios");
@@ -112,6 +116,26 @@ public class ClientMain extends Application {
 
     }
 
+    public static void loadUiToScene ( String ui ) {
+        Parent root = loadUI(ui);
+        stage.setHeight(664);
+        stage.setWidth(1187);
+        scene.setRoot(root);
+        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+        stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
+        stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
+    }
+
+    public static void loadUiToSceneResize ( String ui , double w ,double h) {
+        Parent root = loadUI(ui);
+        stage.setHeight(h);
+        stage.setWidth(w);
+        scene.setRoot(root);
+        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+        stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
+        stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
+    }
+
     public static String formatDate(Date date){
         DateFormat formatter = new SimpleDateFormat("E MMM dd HH:mm:ss Z yyyy");
         DateFormat formatter1 = new SimpleDateFormat("dd.MM.yyyy");
@@ -122,14 +146,5 @@ public class ClientMain extends Application {
         }
         return null;
     }
-}
-//    public static void newNetworkManager()
-//    {
-//        networkManager = ClientNetworkMain.connect();
-//    }
-//
-//    public static ClientNetworkMain getNetworkManager()
-//    {
-//        return networkManager;
-//    }
 
+}
