@@ -59,7 +59,7 @@
       </Label>
       <ScrollPane fx:id="friendsPane" fitToWidth="true" hbarPolicy="NEVER" layoutX="33.0" layoutY="212.0" prefHeight="435.0" prefWidth="657.0" style="-fx-background-color: #2D3447;" stylesheets="@../css/HomeScreenStyle.css">
          <content>
-            <VBox fx:id="friendListPane" alignment="TOP_CENTER" prefHeight="433.0" prefWidth="655.0" style="-fx-background-color: #2D3447;">
+            <VBox fx:id="friendListPane" alignment="TOP_CENTER" prefHeight="433.0" prefWidth="655.0" spacing="4.0" style="-fx-background-color: #2D3447;">
                <padding>
                   <Insets bottom="8.0" left="20.0" right="20.0" top="6.0" />
                </padding>

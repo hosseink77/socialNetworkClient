@@ -44,7 +44,7 @@ public class FriendController implements Initializable {
 
 
     public void onFriendClicked(MouseEvent mouseEvent) {
-        ProfileScreenController profileScreen = (ProfileScreenController) ClientMain.loadUI("ProfileScreen", anchorPane);
+        ProfileScreenController profileScreen = (ProfileScreenController) ClientMain.loadUiToScene("ProfileScreen");
         profileScreen.setupUser(LoginController.getUserEntity(),friendObject);
     }
 

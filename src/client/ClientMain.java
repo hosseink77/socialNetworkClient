@@ -5,6 +5,7 @@ import client.controllers.LoginController;
 import client.model.ConvertImage;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -66,7 +67,6 @@ public class ClientMain extends Application {
 
             setStageIcon(primaryStage);
 
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -116,14 +116,24 @@ public class ClientMain extends Application {
 
     }
 
-    public static void loadUiToScene ( String ui ) {
-        Parent root = loadUI(ui);
-        stage.setHeight(664);
-        stage.setWidth(1187);
+    public static Object loadUiToScene (String ui ) {
+
+        Parent root = null;
+        Object controller = null;
+        try {
+            FXMLLoader loader = new FXMLLoader(ClientMain.class.getResource("resources/fxml/" + ui + ".fxml"));
+            root = loader.load();
+            controller = loader.getController();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        stage.setHeight(703);
+        stage.setWidth(1203);
         scene.setRoot(root);
         Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
         stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
         stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
+        return controller;
     }
 
     public static void loadUiToSceneResize ( String ui , double w ,double h) {

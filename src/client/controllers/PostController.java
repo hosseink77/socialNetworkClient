@@ -52,5 +52,7 @@ public class PostController implements Initializable {
 
     public void onPostClicked(MouseEvent mouseEvent) {
         HomeScreenController.getInstance().loadPost(postDataObject);
+        ReadPostScreen.setPostDataObject(postDataObject);
+        ClientMain.loadUiToScene("ReadPostScreen");
     }
 }
