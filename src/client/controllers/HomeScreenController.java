@@ -135,7 +135,7 @@ public class HomeScreenController implements Initializable {
                 errorText.setVisible(true);
             }
 
-//            System.out.println("Home button pressed!!!");
+            System.out.println("Home button pressed!!!");
         }
         if (actionEvent.getSource() == friendsButton) {
             System.out.println("Friends button pressed!!!");
@@ -214,18 +214,14 @@ public class HomeScreenController implements Initializable {
         clip.setEffect(new DropShadow(+25d, 0d, +2d, Color.DARKSEAGREEN));
         profilePic.setClip(clip);
 
-        // snapshot the rounded image.
         SnapshotParameters parameters = new SnapshotParameters();
         parameters.setFill(Color.TRANSPARENT);
         WritableImage image = profilePic.snapshot(parameters, null);
 
-        // remove the rounding clip so that our effect can show through.
         profilePic.setClip(null);
 
-        // apply a shadow effect.
         profilePic.setEffect(new DropShadow(20, Color.GREEN));
 
-        // store the rounded image in the imageView.
         profilePic.setImage(image);
     }
 

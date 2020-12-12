@@ -141,11 +141,7 @@ public class SignUpController implements Initializable {
 
     @FXML
     public void registerAction(ActionEvent e) {
-//	    if(ClientMain.getNetworkManager().client.isConnected())
         if (CreateRestTemplate.isConnected()) {
-            //TODO Add a check to see if the email is valid
-            //TODO Add a check to see if password is certain characters long
-            //TODO Add a check to look for any vulgar language
 
             String phoneNumber = phone_number.getText();
             String usernameGiven = username.getText();

@@ -2,7 +2,10 @@ package client.controllers;
 
 import client.ClientMain;
 import client.model.ConvertImage;
+import client.model.CreateRestTemplate;
+import client.model.entity.FriendEntity;
 import client.model.entity.UserEntity;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -26,7 +29,7 @@ public class FriendController implements Initializable {
     private ImageView profilePic;
 
     private UserEntity friendObject;
-    private AnchorPane anchorPane;
+    private FriendScreenController friendScreenController;
 
 
     @Override
@@ -34,8 +37,8 @@ public class FriendController implements Initializable {
 
     }
 
-    public void setData(UserEntity user, AnchorPane anchorPane) {
-        this.anchorPane =anchorPane;
+    public void setData(UserEntity user , FriendScreenController friendScreenController) {
+        this.friendScreenController = friendScreenController;
         this.friendObject = user;
         this.id_text.setText(user.getUserName());
         this.postNumber_text.setText(ClientMain.formatDate(user.getDateJoin()));
@@ -49,4 +52,10 @@ public class FriendController implements Initializable {
     }
 
 
+    public void delete(ActionEvent actionEvent) {
+        FriendEntity obj = new FriendEntity(LoginController.getUserEntity().getUserName(), friendObject.getUserName());
+        if ( CreateRestTemplate.buildPost("friend/delete",FriendEntity.class,obj) ){
+            friendScreenController.loadFriendsHome();
+        }
+    }
 }

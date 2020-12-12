@@ -95,7 +95,7 @@ public class ProfileScreenController implements Initializable {
     }
 
     /**
-     * This is the user that made the request to view someones profile
+     * This is the user that Logined
      */
     private UserEntity clientUserObject;
 

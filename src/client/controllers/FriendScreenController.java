@@ -55,7 +55,8 @@ public class FriendScreenController  implements Initializable {
         }
     }
 
-    private void loadFriendsHome() {
+    public void loadFriendsHome() {
+        friendListPane.getChildren().clear();
         List<UserEntity> friendList = CreateRestTemplate.buildGetListFriend("friend/"+LoginController.getUserEntity().getUserName() );
         setupFriends(friendList);
     }
@@ -82,7 +83,7 @@ public class FriendScreenController  implements Initializable {
                         System.out.println("CONTROLLER IS NULL");
                     }
 
-                    friendController.setData(friendDataObject , anchorPane);
+                    friendController.setData(friendDataObject, this );
 
                     nodes[i].setOnMouseEntered(event -> {
                         nodes[j].setStyle("-fx-background-color : #0A0E3F");
@@ -114,22 +115,31 @@ public class FriendScreenController  implements Initializable {
             if(CreateRestTemplate.isConnected()){
                 if(! friendId.equals(userId) && CreateRestTemplate.isExistUserName(friendId)) {
                     FriendEntity obj = new FriendEntity(userId, friendId);
-                    if ( CreateRestTemplate.buildPost("friend/", FriendEntity.class, obj) ) {
-                        errorNotFound.setText("User successfully added \n to your friends");
-                        errorNotFound.setTextFill(Paint.valueOf(Color.GREEN.toString()));
-                        errorNotFound.setVisible(true);
-                        friendListPane.getChildren().clear();
-                        loadFriendsHome();
+                    if( ! CreateRestTemplate.isExistPath("friend/isExist/"+userId+"/"+friendId) ) {
+                        if (CreateRestTemplate.buildPost("friend/", FriendEntity.class, obj)) {
+                            errorNotFound.setText("User successfully added");
+                            errorNotFound.setTextFill(Paint.valueOf(Color.GREEN.toString()));
+                            errorNotFound.setVisible(true);
+                            loadFriendsHome();
+                        }else {
+                            visibleErrorNotFound("Error !");
+                        }
+                    }else{
+                        visibleErrorNotFound("This is a duplicate user !");
                     }
-
                 }else{
-                    errorNotFound.setText("User not found!");
-                    errorNotFound.setTextFill(Paint.valueOf(Color.RED.toString()));
-                    errorNotFound.setVisible(true);
+                    visibleErrorNotFound("User not found!");
                 }
             }else{
                 errorConnection.setVisible(true);
             }
         }
     }
+
+    public void visibleErrorNotFound(String errorText){
+        errorNotFound.setText(errorText);
+        errorNotFound.setTextFill(Paint.valueOf(Color.RED.toString()));
+        errorNotFound.setVisible(true);
+    }
+
 }

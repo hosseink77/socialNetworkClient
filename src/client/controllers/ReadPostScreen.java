@@ -169,26 +169,10 @@ public class ReadPostScreen implements Initializable {
 
     public void handleAuthorClicked(MouseEvent mouseEvent) {
         System.out.println("Author buttons clicked!");
+        UserEntity userAuthor = CreateRestTemplate.buildGet("", UserEntity.class, postDataObject.getOwnerId());
+        ProfileScreenController profileScreen = (ProfileScreenController) ClientMain.loadUI("ProfileScreen", anchorPane);
+        profileScreen.setupUser(clientUserObject , userAuthor);
 
-//        ProfileScreenController profileScreen = (ProfileScreenController) ClientMain.loadUI("ProfileScreen", anchorPane);
-//        profileScreen.setupUser(clientUserObject, postOwnerId);
-
-//        Parent root = null;
-//        try {
-//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ProfileScreen.fxml"));
-//            root = loader.load();
-//
-//            ProfileScreenController profileScreenController = loader.getController();
-//            profileScreenController.setupUser(clientUserObject, postOwnerObject);
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        try {
-//            anchorPane.getChildren().setAll(root);
-//        } catch (NullPointerException ex) {
-//            ex.printStackTrace();
-//        }
     }
 
     public void handleBackButtonClick(MouseEvent mouseEvent) {

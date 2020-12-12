@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
@@ -48,5 +49,10 @@
             </HBox>
          </children>
       </VBox>
+      <JFXButton onAction="#delete" prefHeight="37.0" prefWidth="100.0" style="-fx-background-color: #e33e3e;" text="Remove">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
    </children>
 </HBox>
