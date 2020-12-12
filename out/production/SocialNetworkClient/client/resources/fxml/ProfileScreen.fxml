@@ -73,7 +73,7 @@
                         <Insets top="20.0" />
                      </VBox.margin>
                   </Label>
-                  <Label fx:id="fullNameText" alignment="BOTTOM_LEFT" prefHeight="45.0" prefWidth="234.0" text="Junaid Talpur" textFill="WHITE">
+                  <Label fx:id="fullNameText" alignment="BOTTOM_LEFT" prefHeight="45.0" prefWidth="234.0" text="Full Name" textFill="WHITE">
                      <font>
                         <Font size="30.0" />
                      </font>
@@ -89,7 +89,7 @@
                         <Insets top="60.0" />
                      </VBox.margin>
                   </Label>
-                  <Label fx:id="usernameText" prefHeight="45.0" prefWidth="228.0" text="Phoenix" textFill="WHITE">
+                  <Label fx:id="usernameText" prefHeight="45.0" prefWidth="228.0" text="UserName" textFill="WHITE">
                      <font>
                         <Font size="30.0" />
                      </font>
@@ -104,7 +104,7 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="phoneNumberText" alignment="TOP_CENTER" prefHeight="27.0" prefWidth="144.0" text="721211" textFill="#c9c9c9" translateX="85.0" translateY="60.0">
+            <Label fx:id="phoneNumberText" alignment="TOP_CENTER" prefHeight="27.0" prefWidth="144.0" text="09130000000" textFill="#c9c9c9" translateX="85.0" translateY="60.0">
                <font>
                   <Font size="18.0" />
                </font>
@@ -114,7 +114,7 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="dateJoinedText" prefHeight="27.0" prefWidth="114.0" text="2018-11-18" textFill="#c9c9c9" translateX="100.0" translateY="60.0">
+            <Label fx:id="dateJoinedText" prefHeight="27.0" prefWidth="114.0" text="2020-11-18" textFill="#c9c9c9" translateX="100.0" translateY="60.0">
                <font>
                   <Font size="18.0" />
                </font>
